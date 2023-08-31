@@ -24,6 +24,8 @@ public class HomePage extends TestBase {
 		@FindBy(xpath = "//div[@id='logo_aT']")
 		WebElement actitimeLogo;
 		
+		@FindBy(xpath = "//a[@class='content users']")
+		WebElement userLink;
 	
 		
 		//initialization
@@ -78,5 +80,16 @@ public class HomePage extends TestBase {
 	         return new ReportsPage();
 			
 		}
+        
+        public UsersPage clickOnUserLink() {
+    		try {
+    			Thread.sleep(500);
+    		} catch (InterruptedException e) {
+    			System.out.println(e.toString());
+    		}
+    		userLink.click();
+    		return new UsersPage();
+    	}
+	
 	
 }
